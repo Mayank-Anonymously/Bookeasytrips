@@ -16,7 +16,6 @@ const Homebanner = () => {
           </div>
         </div>
       </div>
-      {/* <Selection /> */}
     </>
   );
 };

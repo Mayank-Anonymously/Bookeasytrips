@@ -29,7 +29,7 @@ const Navbar = () => {
       <div class="navwrap">
         <nav class="navbar">
           <Link href="/">
-            <img src="/resource/images/notext.png" />
+            <img src="/images/main_logo.png" />
           </Link>
           {/* <div className="color-block"></div> */}
           <div

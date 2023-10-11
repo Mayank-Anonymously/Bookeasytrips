@@ -76,6 +76,10 @@ const Footer = () => {
                   <i className="fab fa-linkedin-in" />
                 </a>
               </div>
+              <img
+                src="/images/main_logo.png"
+                style={{ width: "100%", height: "20%" }}
+              />
             </div>
           </div>
         </div>
