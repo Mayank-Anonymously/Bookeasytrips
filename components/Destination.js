@@ -23,35 +23,23 @@ const Destination = () => {
                 <div className="w-100 d-flex justify-content-between mb-2">
                   <div className="position-relative">
                     <a
-                      href="https://transvelo.github.io/mytravel-html/html/others/destination.html"
+                      href="#"
                       className="destination text-white font-weight-bold font-size-21 pb-3 mb-3 text-lh-1 d-block"
                     >
                       United Kingdom
                     </a>
                     {/* Dropdown List */}
                     <div className="destination-dropdown v1">
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/hotels/hotel-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         30 Hotel
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/tour/tour-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         48 Tour
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/activities/activities-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         46 Activity
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/yacht/yacht-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         32 Yacht
                       </a>
                     </div>
@@ -73,35 +61,23 @@ const Destination = () => {
                 <header className="w-100 d-flex justify-content-between mb-2">
                   <div className="position-relative">
                     <a
-                      href="https://transvelo.github.io/mytravel-html/html/others/destination.html"
+                      href="#"
                       className="destination text-white font-weight-bold font-size-21 pb-3 mb-3 text-lh-1 d-block"
                     >
                       Turkey
                     </a>
                     {/* Dropdown List */}
                     <div className="destination-dropdown v1">
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/hotels/hotel-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         30 Hotel
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/tour/tour-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         48 Tour
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/activities/activities-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         46 Activity
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/yacht/yacht-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         32 Yacht
                       </a>
                     </div>
@@ -123,35 +99,23 @@ const Destination = () => {
                 <header className="w-100 d-flex justify-content-between mb-2">
                   <div className="position-relative">
                     <a
-                      href="https://transvelo.github.io/mytravel-html/html/others/destination.html"
+                      href="#"
                       className="destination text-white font-weight-bold font-size-21 pb-3 mb-3 text-lh-1 d-block"
                     >
                       United States
                     </a>
                     {/* Dropdown List */}
                     <div className="destination-dropdown v1">
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/hotels/hotel-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         30 Hotel
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/tour/tour-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         48 Tour
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/activities/activities-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         46 Activity
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/yacht/yacht-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         32 Yacht
                       </a>
                     </div>
@@ -173,35 +137,23 @@ const Destination = () => {
                 <header className="w-100 d-flex justify-content-between mb-2">
                   <div className="position-relative">
                     <a
-                      href="https://transvelo.github.io/mytravel-html/html/others/destination.html"
+                      href="#"
                       className="destination text-white font-weight-bold font-size-21 pb-3 mb-3 text-lh-1 d-block"
                     >
                       Ukraine
                     </a>
                     {/* Dropdown List */}
                     <div className="destination-dropdown v1">
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/hotels/hotel-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         30 Hotel
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/tour/tour-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         48 Tour
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/activities/activities-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         46 Activity
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/yacht/yacht-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         32 Yacht
                       </a>
                     </div>
@@ -223,35 +175,23 @@ const Destination = () => {
                 <header className="w-100 d-flex justify-content-between mb-2">
                   <div className="position-relative">
                     <a
-                      href="https://transvelo.github.io/mytravel-html/html/others/destination.html"
+                      href="#"
                       className="destination text-white font-weight-bold font-size-21 pb-3 mb-3 text-lh-1 d-block"
                     >
                       France
                     </a>
                     {/* Dropdown List */}
                     <div className="destination-dropdown v1">
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/hotels/hotel-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         30 Hotel
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/tour/tour-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         48 Tour
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/activities/activities-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         46 Activity
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/yacht/yacht-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         32 Yacht
                       </a>
                     </div>
@@ -273,35 +213,23 @@ const Destination = () => {
                 <header className="w-100 d-flex justify-content-between mb-2">
                   <div className="position-relative">
                     <a
-                      href="https://transvelo.github.io/mytravel-html/html/others/destination.html"
+                      href="#"
                       className="destination text-white font-weight-bold font-size-21 pb-3 mb-3 text-lh-1 d-block"
                     >
                       India
                     </a>
                     {/* Dropdown List */}
                     <div className="destination-dropdown v1">
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/hotels/hotel-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         30 Hotel
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/tour/tour-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         48 Tour
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/activities/activities-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         46 Activity
                       </a>
-                      <a
-                        className="dropdown-item"
-                        href="https://transvelo.github.io/mytravel-html/html/yacht/yacht-list.html"
-                      >
+                      <a className="dropdown-item" href="#">
                         32 Yacht
                       </a>
                     </div>
