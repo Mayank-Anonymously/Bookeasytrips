@@ -47,64 +47,62 @@ export default function Cards() {
       </div>
       <Slider {...settings}>
         <div className="test-card">
-          <img src="/images/destination/america.jpg" />
+          <img src="/images/carousel/antinio.jpg" />
 
-          <h5>Jet Airways</h5>
+          <h5>Flights To San Antonio</h5>
 
           <p>
-            he has been a pleasure to work with, and we couldn't be happier with
-            the results!
+            Get the best trip to San Antonio with us—it's not just a flight,
+            it's an awesome adventure in the sky."
           </p>
         </div>
         <div className="test-card">
-          <img src="/images/destination/america.jpg" />
-
-          <h5>Jet Airways</h5>
+          <img src="/images/carousel/atlanta.jpg" />
+          <h5>Flights To Louisville</h5>
 
           <p>
-            {" "}
-            During the process He was always available to answer our questions
-            and provide helpful advice.
+            Get the best trip to Louisville with us—it's not just a flight, it's
+            an awesome adventure in the sky."
           </p>
         </div>
         <div className="test-card">
-          <img src="/images/destination/america.jpg" />
+          <img src="/images/carousel/boston.jpg" />
 
-          <h5>Jet Airways</h5>
+          <h5>Flights To Atlanta</h5>
 
           <p>
-            He was always available to answer our questions and provide helpful
-            advice.{" "}
+            Get the best trip to Atlanta with us—it's not just a flight, it's an
+            awesome adventure in the sky."
           </p>
         </div>
         <div className="test-card">
-          <img src="/images/destination/america.jpg" />
+          <img src="/images/carousel/lasvegas.jpg" />
 
-          <h5>Jet Airways</h5>
+          <h5>Flights To Las Vegas</h5>
 
           <p>
-            He was always available to answer our questions and provide helpful
-            advice.{" "}
+            Get the best trip to Las Vegas with us—it's not just a flight, it's
+            an awesome adventure in the sky."
           </p>
         </div>
         <div className="test-card">
-          <img src="/images/destination/america.jpg" />
+          <img src="/images/carousel/louisville.jpg" />
 
-          <h5>Jet Airways</h5>
+          <h5>Flights To Miami</h5>
 
           <p>
-            He was always available to answer our questions and provide helpful
-            advice.{" "}
+            Get the best trip to Miami with us—it's not just a flight, it's an
+            awesome adventure in the sky."
           </p>
         </div>
         <div className="test-card">
-          <img src="/images/destination/america.jpg" />
+          <img src="/images/carousel/miami.jpg" />
 
-          <h5>Jet Airways</h5>
+          <h5>Flights To Boston</h5>
 
           <p>
-            He was always available to answer our questions and provide helpful
-            advice.{" "}
+            Get the best trip to Boston with us—it's not just a flight, it's an
+            awesome adventure in the sky."
           </p>
         </div>
       </Slider>

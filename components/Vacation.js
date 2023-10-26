@@ -27,7 +27,7 @@ const Vacation = ({ placeimg, placehead }) => {
                       use a passage of Lorem Ipsum, you need to be sure.
                     </p>
                     <div className="about-info-wrap">
-                      <div className="about-info-left">
+                      {/* <div className="about-info-left">
                         <p>2 Days / 3 Night</p>
                         <ul>
                           <li>
@@ -48,7 +48,7 @@ const Vacation = ({ placeimg, placehead }) => {
                             </span>
                           </li>
                         </ul>
-                      </div>
+                      </div> */}
                       <div className="about-info-right">
                         <p>Starting from</p>
                         <h3>$500</h3>

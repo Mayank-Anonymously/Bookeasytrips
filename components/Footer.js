@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -6,44 +7,42 @@ const Footer = () => {
       <footer className="footer">
         <div className="container footer-container">
           <div className="row footer-row">
-            <div className="footer-col col-md-3">
-              <h4>company</h4>
+            <div className="footer-col col-md-4">
+              <h4>Quick Links</h4>
               <ul>
                 <li>
-                  <a href="#">about us</a>
+                  <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <a href="#">our services</a>
+                  <Link href="/about">About us</Link>
+                </li>
+
+                <li>
+                  <Link href="/privacy">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#">privacy policy</a>
-                </li>
-                <li>
-                  <a href="#">affiliate program</a>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
-            <div className="footer-col col-md-3">
+            <div className="footer-col col-md-4">
               <h4>get help</h4>
               <ul>
                 <li>
-                  <a href="#">FAQ</a>
+                  <Link href="/terms">Terms & Conditions</Link>
                 </li>
                 <li>
-                  <a href="#">shipping</a>
+                  <Link href="/refund">Refund Policy</Link>
                 </li>
                 <li>
-                  <a href="#">returns</a>
+                  <Link href="/cancellation">Cancellation Policy</Link>
                 </li>
                 <li>
-                  <a href="#">order status</a>
-                </li>
-                <li>
-                  <a href="#">payment options</a>
+                  <Link href="/disclaimer">Disclaimer</Link>
                 </li>
               </ul>
             </div>
-            <div className="footer-col col-md-3">
+            {/* <div className="footer-col col-md-3">
               <h4>online shop</h4>
               <ul>
                 <li>
@@ -59,8 +58,8 @@ const Footer = () => {
                   <a href="#">dress</a>
                 </li>
               </ul>
-            </div>
-            <div className="footer-col col-md-3">
+            </div> */}
+            <div className="footer-col col-md-4">
               <h4>follow us</h4>
               <div className="social-links">
                 <a href="#">

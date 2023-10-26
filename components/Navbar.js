@@ -56,10 +56,10 @@ const Navbar = () => {
             </li>
 
             <li class="nav-item">
-              <Link href="/#contact">Privacy Policy</Link>
+              <Link href="/privacy">Privacy Policy</Link>
             </li>
             <li class="nav-item">
-              <Link href="/#contact">General Policy</Link>
+              <Link href="/terms">Terms & Conditions</Link>
             </li>
           </ul>
         </nav>
