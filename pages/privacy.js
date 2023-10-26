@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import { host, siteid } from "../static";
@@ -26,7 +25,6 @@ const Privacy = () => {
 
   return (
     <>
-      <Navbar />
       <BreadBanner main="Privacy Policy" breadsub="Privacy Policy" />
       {response == undefined || response.length == 0 ? (
         <>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import { host, siteid } from "../static";
@@ -24,7 +23,6 @@ const Disclaimer = () => {
 
   return (
     <>
-      <Navbar />
       <BreadBanner main="Disclaimer" breadsub="Disclaimer" />
       {response == undefined || response.length == 0 ? (
         <>

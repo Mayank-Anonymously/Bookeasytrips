@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import { host, siteid } from "../static";
@@ -27,7 +26,6 @@ const Terms = () => {
 
   return (
     <>
-      <Navbar />
       <BreadBanner main="Terms & Conditions" breadsub="Terms & Conditions" />
       {response == undefined || response.length == 0 ? (
         <>

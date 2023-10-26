@@ -15,7 +15,7 @@ const Cancellation = () => {
     };
 
     fetch(
-      `${host}seo/cancellation/get-cancellation/${siteid}/cancellation`,
+      `${host}seo/cancellation/get-cancellation-policy/${siteid}/cancellation`,
       options
     )
       .then((response) => response.json())
@@ -27,7 +27,6 @@ const Cancellation = () => {
 
   return (
     <>
-      <Navbar />
       <BreadBanner main="Cancellation Policy" breadsub="Cancellation Policy" />
       {response == undefined || response.length == 0 ? (
         <>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import { host, siteid } from "../static";
@@ -14,7 +13,7 @@ const Refund = () => {
       headers: { "Content-Type": "application/json" },
     };
 
-    fetch(`${host}seo/refund/get-refund/${siteid}/refund`, options)
+    fetch(`${host}seo/refund/get-refund/${siteid}/refund_policy`, options)
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
@@ -24,7 +23,6 @@ const Refund = () => {
 
   return (
     <>
-      <Navbar />
       <BreadBanner main="Refund Policy" breadsub="Refund Policy" />
       {response == undefined || response.length == 0 ? (
         <>
