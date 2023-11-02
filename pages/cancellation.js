@@ -15,7 +15,7 @@ const Cancellation = () => {
     };
 
     fetch(
-      `${host}seo/cancellation/get-cancellation-policy/${siteid}/cancellation`,
+      `${host}seo/cancellation/get-cancellation/${siteid}/cancellation`,
       options
     )
       .then((response) => response.json())

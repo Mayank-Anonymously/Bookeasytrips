@@ -13,7 +13,7 @@ const Refund = () => {
       headers: { "Content-Type": "application/json" },
     };
 
-    fetch(`${host}seo/refund/get-refund/${siteid}/refund_policy`, options)
+    fetch(`${host}seo/refund/get-refund-policy/${siteid}/refund`, options)
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
