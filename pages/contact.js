@@ -21,7 +21,9 @@ const contact = () => {
                       </div>
                       <div className="office-info-text">
                         <h2>Address</h2>
-                        <p>7 Green Lake Street Crawfordsville, IN 47933</p>
+                        <p>5940, Macleod Trail Southwest,</p>
+                        <p>Suite 500, Office#511</p>
+                        <p>Calagary AB, T2H 2G4</p>
                       </div>
                     </div>
                   </div>
@@ -34,8 +36,7 @@ const contact = () => {
                       </div>
                       <div className="office-info-text">
                         <h2>Email Us</h2>
-                        <p>Parador@gmail.com</p>
-                        <p>helloyou@gmail.com</p>
+                        <p>info@bookeasytrips.com</p>
                       </div>
                     </div>
                   </div>
@@ -49,7 +50,6 @@ const contact = () => {
                       <div className="office-info-text">
                         <h2>Call Now</h2>
                         <p>+1 800 123 456 789</p>
-                        <p>+1 800 123 654 987</p>
                       </div>
                     </div>
                   </div>
