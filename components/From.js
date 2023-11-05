@@ -1,6 +1,6 @@
+import currency from "../utils/currency";
+import AirPortData from "../utils/AirPortData";
 import React, { useEffect, useState, useRef } from "react";
-// import { useSelector } from "react-redux";
-// import AirPortData from "../Sample_Data/AirPortData.json";
 
 const From = ({ setarrival, setCountryCode }) => {
   const [active, setActive] = useState("");
@@ -15,7 +15,6 @@ const From = ({ setarrival, setCountryCode }) => {
 
   // Redux
   //   const { currency_Name_rd } = useSelector((state) => state.currency_Reducer);
-  const AirPortData = [];
   const changecity = (e) => {
     clickCity();
     const arr = e.target.value.split(" ");
@@ -30,7 +29,7 @@ const From = ({ setarrival, setCountryCode }) => {
   };
 
   const AirportFilter = AirPortData.filter(
-    (item) => item.countryCode === currency_Name_rd.currency_Code
+    (item) => item.countryCode === currency.currency_Code
   );
 
   const fetchAPI = () => {
@@ -160,7 +159,7 @@ const From = ({ setarrival, setCountryCode }) => {
               type="text"
               id="selecteds"
               className="city form-control capitalize"
-              //   value={select === {} ? "" : select.airportName}
+              // value={select === {} ? "" : select.airportName}
               autocomplete="off"
               placeholder="Country, City or Airport"
               ref={citybox}
@@ -178,7 +177,14 @@ const From = ({ setarrival, setCountryCode }) => {
         <ul
           role="listbox"
           className="menuflitem-5 dataResult pl-0 w-1/3 pr-0 absolute z-50 bg-white shadow rounded w-100"
-          // style={{ display: FavGen }}
+          style={{
+            maxWidth: "100%",
+            overflow: "auto",
+            maxHeight: "330px",
+            padding: "20px",
+            display: "block",
+            position: "absolute",
+          }}
         >
           {filterdData.map((item, i) => (
             <>
