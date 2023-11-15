@@ -1,18 +1,30 @@
-import { flight_auth } from "@/static";
-import { flight } from "../Flights/static";
+import { flight, flight_auth } from "@/static";
 import axios from "axios";
-const Oneway_api = () => {
+const Oneway_api = (
+  travelleradult,
+  travellerchildren,
+  travellerInfant,
+  departure,
+  arrival,
+  classe,
+  tripType,
+  startDateFormat,
+  endDateFormat,
+  setIsLoading,
+  isLoading,
+  router
+) => {
   let data = JSON.stringify({
-    adults: "1",
+    adults: travelleradult,
     airline: "All",
     browser: "WINDOWS_10",
-    cabinType: "1",
-    child: 0,
+    cabinType: classe,
+    child: travellerchildren,
     client: 2,
-    currencyCode: "INR",
+    currencyCode: "USD",
     device: "Desktop",
     flexibleSearch: false,
-    infants: 0,
+    infants: travellerInfant,
     infantsWs: 0,
     isNearBy: false,
     limit: 300,
@@ -25,15 +37,15 @@ const Oneway_api = () => {
     searchID: "0fgg48ux7h6421l",
     segment: [
       {
-        originAirport: "DEL",
-        destinationAirport: "BOM",
-        travelDate: "11/10/2023",
+        originAirport: departure,
+        destinationAirport: arrival,
+        travelDate: startDateFormat,
       },
     ],
     serverIP: "",
     siteId: 6,
     source: "online",
-    tripType: "1",
+    tripType: tripType,
     userCountry: "IN",
     userIP: "42.108.29.106",
     userSearch: true,
@@ -48,11 +60,21 @@ const Oneway_api = () => {
     },
     data: data,
   };
-
+  setIsLoading(true);
   axios
     .request(config)
     .then((response) => {
-      console.log(JSON.stringify(response.data));
+      setIsLoading(true);
+      if (response.data.flightResult) {
+        setIsLoading(false);
+        if (isLoading === false) {
+          localStorage.setItem(
+            "FlightResult",
+            JSON.stringify(response.data.flightResult)
+          );
+          router.push("/search/dom-one-way");
+        }
+      }
     })
     .catch((error) => {
       console.log(error);
