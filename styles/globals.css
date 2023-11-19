@@ -415,9 +415,11 @@ a {
   height: 375px;
   padding: 10px 35px;
 }
+.test-card span{
+  color: #fc4c4c;
+}
 
-.test-card h5,
-span {
+.test-card h5 {
   color: #fc4c4c;
 }
 
@@ -7247,11 +7249,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 0 !important;
 }
 
-span.badge {
+/* span.badge {
   white-space: normal;
   line-height: 1.6;
   text-align: left;
-}
+} */
 
 .depbadge-dflex .outbound-rtp.mr-0-gbs {
   margin-right: 3px;
@@ -10699,4 +10701,101 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
     font-size: 13px;
     letter-spacing: 1.4px;
   }
+}
+
+
+
+/* //Flight Result Css ********************************************************* */
+
+/* //Stop CheckBox ****************************************************** */
+
+.Collapsible__trigger.is-open svg {
+  transform: rotate(90deg);
+}
+.Collapsible__trigger.is-open .fa-chevron-down {
+  transform: rotate(180deg) !important;
+}
+
+
+.Collapsible__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 10px;
+}
+
+.trig-span {
+  flex-grow: 6;
+  color: black;
+}
+
+.stop-collapse .fa-chevron-down{
+  color: #000;
+}
+.stop-collapse {
+  border: 1px solid grey;
+  /* padding: 5px; */
+  border-radius: 5px;
+}
+.stop-checkbox{
+  margin: 15px 10px;
+  padding-bottom: 15px;
+}
+.stop-check{
+  border-top: 1px solid grey;
+}
+
+.location-badge{
+  font-weight: 400!important;
+    letter-spacing: 1.4px!important;
+    border-radius: 50px!important;
+    font-size: 14px!important;
+    color: #2e2e2e!important;
+    background: #f1f1f1!important;
+    padding: 2px 15px!important;
+    display: inline-block!important;
+    min-width: 70px!important;
+    position: relative!important;
+    z-index: 6;
+    text-align: center!important;
+}
+.ticket-time{
+  font-size: 14px!important;
+  font-weight: 500!important;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+.ticket-date{
+  color: grey;
+  font-size: 15px;
+}
+.ticket-stop-span{
+  font-size: 13px!important;
+  color: grey;
+}
+.price-span{
+  color: grey;
+  font-size: 16px;
+}
+.price-tag{
+  font-weight: 900;
+  font-size: 19px;
+}
+.book-btn{
+  padding: 5px 14px;
+    background: orange;
+    color: white;
+    border-color: orange;
+    font-weight: 500;
+}
+ .fa-plane{
+  color: grey !important;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+
+.slick-prev, .slick-next {
+  width: 30px!important;
+  height: 30px!important;
 }
