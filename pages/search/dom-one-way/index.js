@@ -3,7 +3,8 @@ import Result_div from "@/components/results/domestic/result_div";
 import React from "react";
 
 const index = () => {
-  const flightData = JSON.parse(localStorage.getItem("FlightResult"));
+
+
   return (
     <div>
       <div
@@ -18,7 +19,7 @@ const index = () => {
         <Navbar />
       </div>
       <div class="mt-5">
-        <Result_div name={"item.currency_Name"} flightData={flightData} />
+        <Result_div name={"item.currency_Name"}  />
       </div>
     </div>
   );
