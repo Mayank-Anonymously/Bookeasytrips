@@ -5,11 +5,11 @@ import React from "react";
 import moment from "moment";
 
 const Result_div = (props) => {
-  const data = localStorage.getItem("FlightResult");
-  const flightData = JSON.parse(data);
+  // const data = localStorage.getItem("FlightResult");
+  // const flightData = JSON.parse(data);
   const { name } = props;
 
-  console.log(flightData);
+  const flightData = [];
   return (
     <>
       <div className="container">
