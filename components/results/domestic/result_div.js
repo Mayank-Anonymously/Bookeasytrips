@@ -6,7 +6,7 @@ import moment from "moment";
 
 const Result_div = (props) => {
   const data =
-    typeof window !== "undefined" ? localStorage.getItem("FlightResult") : null;
+    typeof window !== "undefined" ? localStorage.getItem("FlightResult") : [];
   const flightData = JSON.parse(data);
   const { name } = props;
 
