@@ -49,7 +49,7 @@ const contact = () => {
                       </div>
                       <div className="office-info-text">
                         <h2>Call Now</h2>
-                        <p>+1-8888-750-118</p>
+                        <p>+1-888-279-9809</p>
                       </div>
                     </div>
                   </div>
