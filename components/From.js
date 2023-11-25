@@ -1,6 +1,6 @@
+import currency from "../utils/currency";
+import AirPortData from "../utils/AirPortData";
 import React, { useEffect, useState, useRef } from "react";
-// import { useSelector } from "react-redux";
-// import AirPortData from "../Sample_Data/AirPortData.json";
 
 const From = ({ setarrival, setCountryCode }) => {
   const [active, setActive] = useState("");
@@ -15,7 +15,6 @@ const From = ({ setarrival, setCountryCode }) => {
 
   // Redux
   //   const { currency_Name_rd } = useSelector((state) => state.currency_Reducer);
-  const AirPortData = [];
   const changecity = (e) => {
     clickCity();
     const arr = e.target.value.split(" ");
@@ -30,7 +29,7 @@ const From = ({ setarrival, setCountryCode }) => {
   };
 
   const AirportFilter = AirPortData.filter(
-    (item) => item.countryCode === currency_Name_rd.currency_Code
+    (item) => item.countryCode === currency.currency_Code
   );
 
   const fetchAPI = () => {
@@ -108,6 +107,7 @@ const From = ({ setarrival, setCountryCode }) => {
 
   // setdisablecity
   const [disablecity, setdisablecity] = useState(false);
+
   function clickBlur() {
     if (inputValue?.length != 0) {
       setdisablecity(true);
@@ -131,43 +131,29 @@ const From = ({ setarrival, setCountryCode }) => {
         onClick={(e) => documentoutside(e)}
       >
         <div className="text-black documentoutside">
-          {active ? (
-            <div className="city-deprtright">
-              <span className="text-sm text-black city-Name ">
-                <i className="fa fa-map-marker-alt text-blue-500"></i> &nbsp;{" "}
-                {cityName}
-              </span>
-              <span className="foot rounded-lg w-full col-span-3 text-lg px-4  font-semibold ml-3">
-                {airportCode}
-              </span>
-            </div>
-          ) : (
-            ""
-          )}
-
           <span onClick={() => closewithfocus()}>
             {" "}
             <i className="fa fa-window-close close-icon cityclose" />
           </span>
 
-          <div className={`${"input-group "}` + active}>
+          <div className={`${"input-group "}`}>
             <span class="input-group-text align-items-center justify-content-center">
-              <span className="block truncate col-span-6 font-bold text-sm font-sans  py-1">
+              <span className="block truncate col-span-6 font-bold text-sm font-sans  ">
                 <i class="fa fa-plane-departure  text-blue-500"></i>
               </span>
             </span>
+
             <input
               type="text"
               id="selecteds"
-              className="city form-control capitalize"
-              //   value={select === {} ? "" : select.airportName}
+              className="form-control"
+              value={select ? select.airportName : ""}
               autocomplete="off"
               placeholder="Country, City or Airport"
               ref={citybox}
               onChange={(e) => changecity(e)}
               onFocus={(e) => clickCity()}
               onBlur={(e) => clickBlur()}
-              disabled={active ? true : false}
               required
             />
           </div>
@@ -178,7 +164,14 @@ const From = ({ setarrival, setCountryCode }) => {
         <ul
           role="listbox"
           className="menuflitem-5 dataResult pl-0 w-1/3 pr-0 absolute z-50 bg-white shadow rounded w-100"
-          // style={{ display: FavGen }}
+          style={{
+            maxWidth: "40%",
+            overflow: "auto",
+            maxHeight: "330px",
+            padding: "8px",
+            display: "block",
+            position: "absolute",
+          }}
         >
           {filterdData.map((item, i) => (
             <>
@@ -189,7 +182,7 @@ const From = ({ setarrival, setCountryCode }) => {
                 <div className="flex-grow-1 pr-2 text-left">
                   {item.airportName + "," + item.cityName}
                 </div>
-                <span className="float-right shadow foot px-4 rounded-xl">
+                <span className="float-right shadow foot px-4 rounded-xl text-white">
                   {item.airportCode}
                 </span>
               </div>

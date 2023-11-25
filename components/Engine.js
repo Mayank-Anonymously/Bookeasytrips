@@ -3,6 +3,8 @@ import { Tab } from "@headlessui/react";
 import { addDays } from "date-fns";
 import * as React from "react";
 import Alert from "react-bootstrap/Alert";
+import Lottie from "react-lottie";
+import animationData from "../lottie/97203-loader.json";
 
 // import DatePicker from "react-date-picker";
 
@@ -17,7 +19,6 @@ import { useRouter } from "next/router";
 // import { useDispatch, useSelector } from "react-redux";
 // import { checkFlights } from "../Feature/Action";
 import { Button } from "react-bootstrap";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -28,6 +29,7 @@ import Col from "react-bootstrap/Col";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+import Oneway_api from "@/API/Flights/Oneway_api";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -35,29 +37,6 @@ function classNames(...classes) {
 
 export default function Engine(props) {
   const router = useRouter();
-  const [Result, setResult] = useState({});
-  const [Load, setLoad] = useState(false);
-  const [resturnDate, setreturnd] = useState(false);
-  //   const { currency_Name_rd } = useSelector((item) => item.currency_Reducer);
-  const [showappnow, setShowappnow] = useState(true);
-
-  const year = moment().add(5, "months").format("MM/DD/YYYY");
-
-  // rest
-  const [value, setValue] = React.useState([null, null]);
-  let [isOpen, setIsOpen] = useState(false);
-
-  const [values, setValues] = React.useState(new Date());
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-  function setdateReturn() {
-    setreturnd(true);
-  }
-  function openModal() {
-    setIsOpen(true);
-  }
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -65,19 +44,15 @@ export default function Engine(props) {
       key: "selection",
     },
   ]);
-
-  function setdate() {
-    setIsOpen(false);
-    setstartDate(state[0].startDate);
-    setendDate(state[0].endDate);
-  }
+  const [Result, setResult] = useState({});
+  const [Load, setLoad] = useState(false);
+  const [resturnDate, setreturnd] = useState(false);
+  const [showappnow, setShowappnow] = useState(true);
+  const [value, setValue] = React.useState([null, null]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [values, setValues] = React.useState(new Date());
   const [startDate, setstartDate] = useState(state[0].startDate);
   const [endDate, setendDate] = useState(state[0].endDate);
-
-  // Full data
-  // const [single_date, setsingle_date] = useState(
-  //   startDate.toLocaleDateString()
-  // );
   const [departure, setdeparture] = useState("");
   const [arrival, setarrival] = useState("");
   const [classe, setclasse] = useState(1);
@@ -94,13 +69,25 @@ export default function Engine(props) {
   const [valueChange, setValueChange] = useState(false);
   const [valueDate, onChange] = useState(new Date());
   const [valueDateReturn, onChangeReturn] = useState(new Date());
-
-  //   const dispatch = useDispatch();
-
-  const resultoneway = "/Results";
-  const resultroundway = "/Results2";
+  const [isLoading, setIsLoading] = useState(false);
+  const year = moment().add(5, "months").format("MM/DD/YYYY");
 
   // Ios
+  function closeModal() {
+    setIsOpen(false);
+  }
+  function setdateReturn() {
+    setreturnd(true);
+  }
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function setdate() {
+    setIsOpen(false);
+    setstartDate(state[0].startDate);
+    setendDate(state[0].endDate);
+  }
 
   const startDateFormat = moment(state[0].startDate, "DD/MM/YYYY").format(
     "MM/DD/YYYY"
@@ -121,69 +108,25 @@ export default function Engine(props) {
   const endDates34 =
     endDateFormat === "Invalid date" ? endDateFormat2 : endDateFormat;
 
-  //   const searchFlight = () => {
-  //     if (!departure && !arrival) {
-  //       alert("Please Fill Yours Destination");
-  //     } else if (!departure) {
-  //       alert("Please Fill To Destination");
-  //     } else if (!arrival) {
-  //       alert("Please Fill From Destination");
-  //     } else if (!startDate.toLocaleDateString()) {
-  //       alert("Please Select Your Travel Date");
-  //     } else if (departure === arrival) {
-  //       alert("Please Select Your Travel Date");
-  //     } else {
-  //       if (tripType === 1) {
-  //         dispatch(
-  //           checkFlights({
-  //             departure: arrival,
-  //             arrival: departure,
-  //             adult: travelleradult,
-  //             children: travellerchildren,
-  //             infant: travellerInfant,
-  //             class: classe,
-  //             startDates: startDates12,
-  //             endDates: endDates34,
-  //             singleDate: startDates12,
-  //             nameClass: nameofclass,
-  //             tripType: tripType,
-  //             CountryCode: CountryCode,
-  //             ArCountryCode: ArCountryCode,
-  //             totalpassanger:
-  //               travellerchildren + travellerInfant + travelleradult,
-  //             login: true,
-  //             currencyCode: currency_Name_rd.currency_Name,
-  //             source: "online",
-  //           })
-  //         );
-  //         router.push(resultoneway);
-  //       } else {
-  //         dispatch(
-  //           checkFlights({
-  //             departure: arrival,
-  //             arrival: departure,
-  //             adult: travelleradult,
-  //             children: travellerchildren,
-  //             infant: travellerInfant,
-  //             class: classe,
-  //             startDates: startDates12,
-  //             endDates: endDates34,
-  //             singleDate: startDates12,
-  //             nameClass: nameofclass,
-  //             tripType: tripType,
-  //             CountryCode: CountryCode,
-  //             ArCountryCode: ArCountryCode,
-  //             totalpassanger:
-  //               travellerchildren + travellerInfant + travelleradult,
-  //             login: true,
-  //             currencyCode: currency_Name_rd.currency_Name,
-  //             source: "online",
-  //           })
-  //         );
-  //         router.push(resultroundway);
-  //       }
-  //     }
-  //   };
+  const searchFlight = () => {
+    if (tripType === 1) {
+      Oneway_api(
+        travelleradult,
+        travellerchildren,
+        travellerInfant,
+        departure,
+        arrival,
+        classe,
+        tripType,
+        startDateFormat,
+        endDateFormat,
+        setIsLoading,
+        isLoading,
+        router
+      );
+      // router.push(/)
+    }
+  };
 
   const ChangeDateColumn = () => {
     setTripType(1);
@@ -194,6 +137,14 @@ export default function Engine(props) {
     setTripType(2);
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <>
       <Container>
@@ -309,13 +260,97 @@ export default function Engine(props) {
                                   </span>
                                 </span>
                                 <input
-                                  type="date"
-                                  // value={startDate.toLocaleDateString()}
-                                  // onClick={openModal}
+                                  type="text"
+                                  autoComplete="off"
+                                  minDate={moment().toDate()}
+                                  value={startDate.toLocaleDateString()}
+                                  onClick={openModal}
                                   className="form-control"
+                                  readOnly
                                 />
                               </div>
                             </div>
+
+                            <Transition appear show={isOpen} as={Fragment}>
+                              <Dialog
+                                as="div"
+                                className={
+                                  "fixed bg-slate-200  inset-0 z-100 overflow-y-auto rangewrapmax-parent "
+                                }
+                                onClose={closeModal}
+                              >
+                                <div className="min-h-screen  text-center">
+                                  <Transition.Child
+                                    as={Fragment}
+                                    enter="ease-out duration-300"
+                                    enterFrom="opacity-0"
+                                    enterTo="opacity-100"
+                                    leave="ease-in duration-200"
+                                    leaveFrom="opacity-100"
+                                    leaveTo="opacity-0"
+                                  >
+                                    <Dialog.Overlay className="fixed inset-0" />
+                                  </Transition.Child>
+
+                                  {/* This element is to trick the browser into centering the modal contents. */}
+                                  <span
+                                    className="inline-block h-screen align-middle leftmidd-dt"
+                                    aria-hidden="true"
+                                  >
+                                    &#8203;
+                                  </span>
+
+                                  <Transition.Child
+                                    as={Fragment}
+                                    enter="ease-out duration-300"
+                                    enterFrom="opacity-0 scale-95"
+                                    enterTo="opacity-100 scale-100"
+                                    leave="ease-in duration-200"
+                                    leaveFrom="opacity-100 scale-100"
+                                    leaveTo="opacity-0 scale-95"
+                                  >
+                                    <div className="modal-overlay">
+                                      <div className="date-modal inline-block w-full datepic-rangewrapmax-wxl my-3 overflow-hidden text-left align-middle transition-all transform bg-white  rounded-2xl">
+                                        <Dialog.Title
+                                          as="h3"
+                                          className=" text-sm  font-medium leading-6 text-gray-900 justify-content-between d-flex flex-column justify-content-center align-items-center flex-wrap"
+                                        >
+                                          <DateRangePicker
+                                            onChange={(item) =>
+                                              setState([item.selection])
+                                            }
+                                            showSelectionPreview={true}
+                                            moveRangeOnFirstSelection={false}
+                                            minDate={moment().toDate()}
+                                            // maxDate={year}
+                                            months={2}
+                                            ranges={state}
+                                            className="datepic-rangewrap justify-content-between"
+                                            rangeColors={[
+                                              "#6c757d",
+                                              "#6c757d",
+                                              "#6c757d",
+                                            ]}
+                                            direction="horizontal"
+                                          />
+                                        </Dialog.Title>
+
+                                        <div className="text-right border-top pt-3 donerange-btn-wrp">
+                                          <button
+                                            className="btn btn-dark btn-lg donerange-btn"
+                                            onClick={() => {
+                                              setdate();
+                                            }}
+                                          >
+                                            Done
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </Transition.Child>
+                                </div>
+                              </Dialog>
+                            </Transition>
                           </Col>
                           {/*--------------- departure--------------  */}
 
@@ -330,10 +365,10 @@ export default function Engine(props) {
                                   Return
                                 </label>
                                 <div className="search-engine-in se-pd  border-gray-800 return-tripinput">
-                                  {/* <span onClick={() => setTripType(1)}>
+                                  <span onClick={() => setTripType(1)}>
                                     {" "}
                                     <i className="fa fa-window-close close-icon" />
-                                  </span> */}
+                                  </span>
                                   <div className="input-group">
                                     <span className="input-group-text align-items-center justify-content-center">
                                       <span className="block truncate text-sm text-black py-1 font-sans font-bold">
@@ -344,10 +379,13 @@ export default function Engine(props) {
                                       </span>
                                     </span>
                                     <input
-                                      type="date"
-                                      // value={endDate.toLocaleDateString()}
-                                      // onClick={openModal}
+                                      type="text"
+                                      autoComplete="off"
+                                      minDate={moment().toDate()}
+                                      value={endDate.toLocaleDateString()}
+                                      onClick={openModal}
                                       className="form-control"
+                                      readOnly
                                     />
                                   </div>
                                 </div>
@@ -378,9 +416,9 @@ export default function Engine(props) {
                             <Button
                               onClick={() => searchFlight()}
                               className="search-flight-btn"
+                              disabled={isLoading}
                             >
-                              Search Flight{" "}
-                              <i className="fa fa-arrow-right"></i>
+                              Search Flight
                             </Button>
                           </Col>
                           {/* ----------------Return--------------  */}
@@ -414,22 +452,16 @@ export default function Engine(props) {
                       </Row>
                     </Col>
                     {/* ---------------top passanger and class-----------  */}
-
-                    <div className="text-right mt-4">
-                      {/* <div className="d-xl-inline-block">
-                        <Button
-                          onClick={() => searchFlight()}
-                          className="btn btn-siteorange search-fl"
-                        >
-                          Search Flight <i className="fa fa-arrow-right"></i>
-                        </Button>
-                      </div> */}
-                      {/* </Link> */}
-                    </div>
                   </div>
                 </div>
               </Tab.Panel>
             </div>
+            {isLoading === true && (
+              <div className="text-center text-grey my-3">
+                Finding Best Fare for you
+                <Lottie options={defaultOptions} height={110} width={110} />
+              </div>
+            )}
           </div>
         </Tab.Group>
       </Container>

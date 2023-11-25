@@ -166,7 +166,13 @@ export default function Passanger({
 
           <div
             className="menuflitem-1 button-infant-menu absolute pl-0 w-full mt-1  text-base bg-white rounded-md shadow-lg max-h-auto z-50 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-            style={{ display: generate }}
+            style={{
+              display: generate,
+              position: "absolute ",
+              zIndex: 99,
+              width: "30%",
+              padding: "20px",
+            }}
           >
             <div className="w-100">
               <h4 className="trav-1">Travellers</h4>
