@@ -10,7 +10,7 @@ const Result_international = (props) => {
   const flightData = JSON.parse(data);
   const { name } = props;
 
-  // const flightData = [];
+
   return (
     <>
       <div className="container">

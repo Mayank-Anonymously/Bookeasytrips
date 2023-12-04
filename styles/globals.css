@@ -8565,6 +8565,8 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
     text-align: left !important;
   }
 
+
+
   .oneway-flres.modifynm .btn-outline-fetfare.btn.btn-primary {
     max-width: 200px;
     margin-left: auto;
@@ -10416,7 +10418,7 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
 
   body .book-flight-engine .input-group .form-control,
   body .book-flight-engine .input-group .input-group-text {
-    height: 92px;
+    height: 70px;
   }
 
   .sbeco-icongent .py-2.px-3.text-black {
@@ -10855,3 +10857,10 @@ color: #fff;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
+
+@media (max-width: 768px) {
+  .destinantion-block{
+    display: none;
+  }
+  }
