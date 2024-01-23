@@ -457,22 +457,22 @@ a {
   }
 
   .flight-engine {
-    max-width: "70%";
-    overflow: "auto";
-    max-height: "330px";
-    padding: "1px";
-    display: "block";
-    position: "absolute";
+    max-width: "70%" !important;
+    overflow: "auto" !important;
+    max-height: "330px" !important;
+    padding: "1px" !important;
+    display: "block" !important;
+    position: "absolute" !important;
   }
 }
 
 .flight-engine {
-  max-width: "40%";
-  overflow: "auto";
-  max-height: "330px";
-  padding: "8px";
-  display: "block";
-  position: "absolute";
+  max-width: "40%" !important;
+  overflow: "auto" !important;
+  max-height: "330px" !important;
+  padding: "8px" !important;
+  display: "block" !important;
+  position: "absolute" !important;
 }
 
 .wpo-contact-pg-section .wpo-contact-title h2 {
