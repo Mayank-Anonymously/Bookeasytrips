@@ -109,7 +109,6 @@ export default function Engine(props) {
     endDateFormat === "Invalid date" ? endDateFormat2 : endDateFormat;
 
   const searchFlight = () => {
-    if (tripType === 1) {
       Oneway_api(
         travelleradult,
         travellerchildren,
@@ -125,7 +124,6 @@ export default function Engine(props) {
         router
       );
       // router.push(/)
-    }
   };
 
   const ChangeDateColumn = () => {

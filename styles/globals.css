@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
   --blue: #377dff;
   --indigo: #2d1582;
@@ -68,6 +70,7 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
+
 body {
   margin: 0;
   font-family: "Rubik", Helvetica, Arial, sans-serif;
@@ -77,6 +80,7 @@ body {
   color: #3b444f;
   text-align: left;
   background-color: #f5f7f8;
+font-family: 'Poppins', sans-serif;
 }
 
 [tabindex="-1"]:focus {
@@ -97,11 +101,13 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+font-family: 'Poppins', sans-serif;
 }
 
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -414,6 +420,9 @@ a {
   /* margin-top: 70px; */
   height: 375px;
   padding: 10px 35px;
+}
+.test-card span{
+  color: #fc4c4c;
 }
 
 .test-card span {
@@ -8574,6 +8583,8 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
     text-align: left !important;
   }
 
+
+
   .oneway-flres.modifynm .btn-outline-fetfare.btn.btn-primary {
     max-width: 200px;
     margin-left: auto;
@@ -10425,7 +10436,7 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
 
   body .book-flight-engine .input-group .form-control,
   body .book-flight-engine .input-group .input-group-text {
-    height: 92px;
+    height: 70px;
   }
 
   .sbeco-icongent .py-2.px-3.text-black {
@@ -10593,6 +10604,9 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
 
 
 
+
+
+
 /* //Flight Result Css ********************************************************* */
 
 /* //Stop CheckBox ****************************************************** */
@@ -10600,7 +10614,6 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
 .Collapsible__trigger.is-open svg {
   transform: rotate(90deg);
 }
-
 .Collapsible__trigger.is-open .fa-chevron-down {
   transform: rotate(180deg) !important;
 }
@@ -10689,6 +10702,39 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
   font-size: 14px;
   border-radius: 7px;
   margin-bottom: 5px;
+}
+
+.select-button{
+  background: #fc4c4c;
+border: none;
+color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px 14px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+
+.select-button:hover{
+  background: #ff1717;
+}
+
+.round-badge{
+  font-size: 12px!important;
+}
+
+.round-ticket-date{
+  font-size: 11px;
+}
+
+.round-dashed{
+  border: 1px dashed #676767;
+    width: 20px!important;
+    margin: 16px 0px;
+}
+
+.round-img img{
+  width: 30px!important;
 }
 
 
@@ -10829,3 +10875,10 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
+
+@media (max-width: 768px) {
+  .destinantion-block{
+    display: none;
+  }
+  }

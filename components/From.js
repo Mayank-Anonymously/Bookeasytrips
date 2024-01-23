@@ -164,7 +164,14 @@ const From = ({ setarrival, setCountryCode }) => {
         <ul
           role="listbox"
           className="menuflitem-5 dataResult pl-0 w-1/3 pr-0 absolute z-50 bg-white shadow rounded w-100"
-
+          style={{
+            maxWidth: "40%",
+            overflow: "auto",
+            maxHeight: "330px",
+            padding: "8px",
+            display: "block",
+            position: "absolute",
+          }}
         >
           {filterdData.map((item, i) => (
             <>

@@ -15,7 +15,7 @@ const Oneway_api = (
   router
 ) => {
   const segments =
-    tripType === 1
+    tripType == 1
       ? [
           {
             originAirport: departure,
@@ -32,7 +32,7 @@ const Oneway_api = (
           {
             originAirport: arrival,
             destinationAirport: departure,
-            travelDate: startDateFormat,
+            travelDate: endDateFormat,
           },
         ];
   let data = JSON.stringify({
@@ -66,6 +66,7 @@ const Oneway_api = (
     userSearch: true,
   });
 
+  console.log(data);
   let config = {
     method: "post",
     maxBodyLength: Infinity,
@@ -87,7 +88,9 @@ const Oneway_api = (
             "FlightResult",
             JSON.stringify(response.data.flightResult)
           );
-          router.push("/search/dom-one-way");
+          tripType == 2
+            ? router.push("/search/dom-two-way")
+            : router.push("/search/dom-one-way");
         }
       }
     })
