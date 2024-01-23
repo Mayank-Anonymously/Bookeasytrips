@@ -80,7 +80,7 @@ body {
   color: #3b444f;
   text-align: left;
   background-color: #f5f7f8;
-font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 [tabindex="-1"]:focus {
@@ -101,13 +101,13 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -421,7 +421,8 @@ a {
   height: 375px;
   padding: 10px 35px;
 }
-.test-card span{
+
+.test-card span {
   color: #fc4c4c;
 }
 
@@ -10614,6 +10615,7 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
 .Collapsible__trigger.is-open svg {
   transform: rotate(90deg);
 }
+
 .Collapsible__trigger.is-open .fa-chevron-down {
   transform: rotate(180deg) !important;
 }
@@ -10704,10 +10706,10 @@ body .book-flight-engine.modify-ver .book-flight-engine .search-engine-in {
   margin-bottom: 5px;
 }
 
-.select-button{
+.select-button {
   background: #fc4c4c;
-border: none;
-color: #fff;
+  border: none;
+  color: #fff;
   font-weight: 500;
   font-size: 12px;
   padding: 3px 14px;
@@ -10715,26 +10717,26 @@ color: #fff;
   margin-bottom: 5px;
 }
 
-.select-button:hover{
+.select-button:hover {
   background: #ff1717;
 }
 
-.round-badge{
-  font-size: 12px!important;
+.round-badge {
+  font-size: 12px !important;
 }
 
-.round-ticket-date{
+.round-ticket-date {
   font-size: 11px;
 }
 
-.round-dashed{
+.round-dashed {
   border: 1px dashed #676767;
-    width: 20px!important;
-    margin: 16px 0px;
+  width: 20px !important;
+  margin: 16px 0px;
 }
 
-.round-img img{
-  width: 30px!important;
+.round-img img {
+  width: 30px !important;
 }
 
 
@@ -10878,7 +10880,24 @@ color: #fff;
 
 
 @media (max-width: 768px) {
-  .destinantion-block{
+  .destinantion-block {
     display: none;
   }
+
+
+  .book-flight-engine .dataResult {
+    max-width: 70% !important;
+    z-index: 99;
   }
+
+  .responsive-engine {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+.dataResult {
+  max-width: 40%;
+  z-index: 99;
+}

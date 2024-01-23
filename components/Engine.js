@@ -109,21 +109,21 @@ export default function Engine(props) {
     endDateFormat === "Invalid date" ? endDateFormat2 : endDateFormat;
 
   const searchFlight = () => {
-      Oneway_api(
-        travelleradult,
-        travellerchildren,
-        travellerInfant,
-        departure,
-        arrival,
-        classe,
-        tripType,
-        startDateFormat,
-        endDateFormat,
-        setIsLoading,
-        isLoading,
-        router
-      );
-      // router.push(/)
+    Oneway_api(
+      travelleradult,
+      travellerchildren,
+      travellerInfant,
+      departure,
+      arrival,
+      classe,
+      tripType,
+      startDateFormat,
+      endDateFormat,
+      setIsLoading,
+      isLoading,
+      router
+    );
+    // router.push(/)
   };
 
   const ChangeDateColumn = () => {
@@ -205,7 +205,7 @@ export default function Engine(props) {
                 {/* ---------------top passanger and class-----------  */}
 
                 <div className="w-100">
-                  <div className="w-100 mt-3">
+                  <div className="w-100 mt-3 responsive-engine">
                     <Row className="ps-relative enginefrom-set">
                       {/* ---------------from------------------- */}
                       <Col
