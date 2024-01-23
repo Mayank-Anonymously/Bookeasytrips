@@ -14,6 +14,27 @@ const Oneway_api = (
   isLoading,
   router
 ) => {
+  const segments =
+    tripType === 1
+      ? [
+          {
+            originAirport: departure,
+            destinationAirport: arrival,
+            travelDate: startDateFormat,
+          },
+        ]
+      : [
+          {
+            originAirport: departure,
+            destinationAirport: arrival,
+            travelDate: startDateFormat,
+          },
+          {
+            originAirport: arrival,
+            destinationAirport: departure,
+            travelDate: startDateFormat,
+          },
+        ];
   let data = JSON.stringify({
     adults: travelleradult,
     airline: "All",
@@ -35,13 +56,7 @@ const Oneway_api = (
     sID: "",
     searchDirectFlight: false,
     searchID: "0fgg48ux7h6421l",
-    segment: [
-      {
-        originAirport: departure,
-        destinationAirport: arrival,
-        travelDate: startDateFormat,
-      },
-    ],
+    segment: segments,
     serverIP: "",
     siteId: 6,
     source: "online",
