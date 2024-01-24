@@ -21,9 +21,12 @@ const contact = () => {
                       </div>
                       <div className="office-info-text">
                         <h2>Address</h2>
-                        <p>30 N, Gould St,</p>
+                        <p>5940, Macleod Trail Southwest,</p>
+                        <p>Suite 500, Office#511</p>
+                        <p>Calagary AB, T2H 2G4</p>
+                        {/* <p>30 N, Gould St,</p>
                         <p>Ste. 4000</p>
-                        <p>Sheridan, Wyoming 82801</p>
+                        <p>Sheridan, Wyoming 82801</p> */}
                       </div>
                     </div>
                   </div>
