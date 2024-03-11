@@ -52,7 +52,7 @@ const contact = () => {
                       </div>
                       <div className="office-info-text">
                         <h2>Call Now</h2>
-                        <p>+1-888-279-9809</p>
+                        <p>+1-855-574-9500</p>
                       </div>
                     </div>
                   </div>

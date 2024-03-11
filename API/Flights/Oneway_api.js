@@ -1,6 +1,7 @@
-import { flight, flight_auth } from "@/static";
 import axios from "axios";
-const Oneway_api = (
+import React from "react";
+
+const oneway_api = (
   travelleradult,
   travellerchildren,
   travellerInfant,
@@ -12,91 +13,42 @@ const Oneway_api = (
   endDateFormat,
   setIsLoading,
   isLoading,
-  router
+  router,
+  setErrorState
 ) => {
-  const segments =
-    tripType == 1
-      ? [
-          {
-            originAirport: departure,
-            destinationAirport: arrival,
-            travelDate: startDateFormat,
-          },
-        ]
-      : [
-          {
-            originAirport: departure,
-            destinationAirport: arrival,
-            travelDate: startDateFormat,
-          },
-          {
-            originAirport: arrival,
-            destinationAirport: departure,
-            travelDate: endDateFormat,
-          },
-        ];
-  let data = JSON.stringify({
-    adults: travelleradult,
-    airline: "All",
-    browser: "WINDOWS_10",
-    cabinType: classe,
-    child: travellerchildren,
-    client: 2,
-    currencyCode: "USD",
-    device: "Desktop",
-    flexibleSearch: false,
-    infants: travellerInfant,
-    infantsWs: 0,
-    isNearBy: false,
-    limit: 300,
-    locale: "en",
-    media: "online",
-    pageValue: "search",
-    rID: "",
-    sID: "",
-    searchDirectFlight: false,
-    searchID: "0fgg48ux7h6421l",
-    segment: segments,
-    serverIP: "",
-    siteId: 6,
-    source: "online",
-    tripType: tripType,
-    userCountry: "IN",
-    userIP: "42.108.29.106",
-    userSearch: true,
-  });
-
-  console.log(data);
-  let config = {
-    method: "post",
-    maxBodyLength: Infinity,
-    url: `${flight}Flights/GetFlightResult?authcode=${flight_auth}`,
+  const options = {
+    method: "POST",
+    url: "https://api.whitefoxtravels.com/search/flight/getFlightResult",
     headers: {
       "Content-Type": "application/json",
     },
-    data: data,
+    data: {
+      departure_at: startDateFormat,
+      destination: arrival,
+      origin: departure,
+      return_at: endDateFormat,
+      triptype: tripType,
+    },
   };
+  console.log("apiHite");
   setIsLoading(true);
+
   axios
-    .request(config)
-    .then((response) => {
-      setIsLoading(true);
-      if (response.data.flightResult) {
+    .request(options)
+    .then(function (response) {
+      if (response.data.message === "Result Fetched") {
         setIsLoading(false);
-        if (isLoading === false) {
-          localStorage.setItem(
-            "FlightResult",
-            JSON.stringify(response.data.flightResult)
-          );
-          tripType == 2
-            ? router.push("/search/dom-two-way")
-            : router.push("/search/dom-one-way");
+        router.push(
+          `https://www.aviasales.com${response.data.response.data[0].link}`
+        );
+        if (response.data.length === 0) {
+          setErrorState("No Routes Availbale");
         }
       }
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(function (error) {
+      console.error(error);
     });
 };
 
-export default Oneway_api;
+export default oneway_api;

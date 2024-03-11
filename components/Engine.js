@@ -89,18 +89,17 @@ export default function Engine(props) {
     setendDate(state[0].endDate);
   }
 
-  const startDateFormat = moment(state[0].startDate, "DD/MM/YYYY").format(
-    "MM/DD/YYYY"
+  const startDateFormat = moment(state[0].startDate, "YYYY-MM-DD").format(
+    "YYYY-MM-DD"
   );
 
-  const startDateFormat2 = moment(state[0].startDate).format("MM/DD/YYYY");
+  const startDateFormat2 = moment(state[0].startDate).format("YYYY-MM-DD");
 
   // Window
-  const endDateFormat = moment(state[0].endDate, "DD/MM/YYYY").format(
-    "MM/DD/YYYY"
+  const endDateFormat = moment(state[0].endDate, "YYYY-MM-DD").format(
+    "YYYY-MM-DD"
   );
-
-  const endDateFormat2 = moment(state[0].endDate).format("MM/DD/YYYY");
+  const endDateFormat2 = moment(state[0].endDate).format("YYYY-MM-DD");
 
   const startDates12 =
     startDateFormat === "Invalid date" ? startDateFormat2 : startDateFormat;

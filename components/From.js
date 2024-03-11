@@ -1,8 +1,8 @@
-import currency from "../utils/currency";
-import AirPortData from "../utils/AirPortData";
+import AirPortData from "@/utils/AirPortData";
+import currency from "@/utils/currency";
 import React, { useEffect, useState, useRef } from "react";
 
-const From = ({ setarrival, setCountryCode }) => {
+const To = ({ setdeparture, setArCountryCode }) => {
   const [active, setActive] = useState("");
   const [inputValue, setInputValue] = useState();
   const [select, setSelectValue] = useState({});
@@ -21,9 +21,7 @@ const From = ({ setarrival, setCountryCode }) => {
     for (var i = 0; i < arr.length; i++) {
       arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     }
-
     const str2 = arr.join(" ");
-
     setInputValue(str2);
     setVisibleValue(1);
   };
@@ -56,13 +54,13 @@ const From = ({ setarrival, setCountryCode }) => {
 
   const airportData = (item) => {
     setSelectValue(item);
-    setCountryCode(item.countryCode);
-    setarrival(item.airportCode);
+    setArCountryCode(item.countryCode);
+    setdeparture(item.airportCode);
     setVisibleValue(0);
+    setActive("active");
     setAirportName(airportName);
     setCityname(item.cityName);
     setAirportCode(item.airportCode);
-    setActive("active");
   };
 
   const citybox = useRef();
@@ -93,12 +91,12 @@ const From = ({ setarrival, setCountryCode }) => {
     e.isPropagationStopped();
   }
   function clickCity() {
-    document.querySelectorAll(".menuflitem-5").forEach(function (el) {
+    document.querySelectorAll(".menuflitem-6").forEach(function (el) {
       el.style.display = "block";
     });
     document
       .querySelectorAll(
-        ".menuflitem-1,.menuflitem-2,.menuflitem-3,.menuflitemb-4,.menuflitem-6"
+        ".menuflitem-1,.menuflitem-2,.menuflitem-3,.menuflitem-5,.menuflitemb-4"
       )
       .forEach(function (el) {
         el.style.display = "none";
@@ -107,7 +105,6 @@ const From = ({ setarrival, setCountryCode }) => {
 
   // setdisablecity
   const [disablecity, setdisablecity] = useState(false);
-
   function clickBlur() {
     if (inputValue?.length != 0) {
       setdisablecity(true);
@@ -138,11 +135,10 @@ const From = ({ setarrival, setCountryCode }) => {
 
           <div className={`${"input-group "}`}>
             <span class="input-group-text align-items-center justify-content-center">
-              <span className="block truncate col-span-6 font-bold text-sm font-sans  ">
+              <span className="block truncate col-span-6 font-bold text-sm font-sans">
                 <i class="fa fa-plane-departure  text-blue-500"></i>
               </span>
             </span>
-
             <input
               type="text"
               id="selecteds"
@@ -163,8 +159,9 @@ const From = ({ setarrival, setCountryCode }) => {
       {visible === 1 && (
         <ul
           role="listbox"
-          className="menuflitem-5 dataResult pl-0 w-1/3 pr-0 absolute z-50 bg-white shadow rounded w-100"
+          className="menuflitem-6 dataResult pl-0 w-1/3 pr-0 absolute z-50 bg-white shadow rounded w-100"
           style={{
+            maxWidth: "40%",
             overflow: "auto",
             maxHeight: "330px",
             padding: "8px",
@@ -193,4 +190,4 @@ const From = ({ setarrival, setCountryCode }) => {
   );
 };
 
-export default From;
+export default To;
